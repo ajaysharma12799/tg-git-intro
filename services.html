@@ -1,11 +1,500 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services</title>
-  </head>
-  <body>
-    <h1>Services page</h1>
-  </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Ajay Sharma - Full Stack Developer</title>
+    <meta name="description" content="Explore the services offered by Ajay Sharma - Web Development, Mobile Development, Cloud & DevOps, and Gen AI solutions" />
+    <meta name="keywords" content="web development, mobile development, cloud services, devops, generative AI, full stack developer, mern stack" />
+    <meta name="author" content="Ajay Sharma" />
+
+    <style>
+        :root {
+            --primary-color: #3944f7;
+            --spacing-20px: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: #222;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            background-color: #111827;
+            color: white;
+            padding: var(--spacing-20px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            gap: var(--spacing-20px);
+        }
+
+        nav a {
+            color: white;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: var(--primary-color);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .services-hero {
+            text-align: center;
+            padding: 60px var(--spacing-20px);
+            background-color: #111827;
+            color: white;
+            margin: 0;
+            border-radius: 0;
+        }
+
+        .services-hero h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .services-hero p {
+            font-size: 18px;
+            color: #9ca3af;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 50px var(--spacing-20px);
+            background-color: white;
+            margin: var(--spacing-20px);
+            border-radius: 10px;
+        }
+
+        section h2 {
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .service-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .service-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            padding: 30px;
+            border-radius: 12px;
+            background-color: #f8f9ff;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(57, 68, 247, 0.12);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #111827;
+        }
+
+        .service-card p {
+            color: #4b5563;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .service-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-features li {
+            padding: 6px 0;
+            color: #374151;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-features li::before {
+            content: "\2713";
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .why-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .why-card {
+            flex: 1;
+            min-width: 220px;
+            max-width: 280px;
+            text-align: center;
+            padding: 25px;
+            border-radius: 10px;
+            background-color: #f0f4ff;
+        }
+
+        .why-card .icon {
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .why-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .why-card p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            counter-reset: step;
+        }
+
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+            text-align: center;
+            padding: 25px 15px;
+            position: relative;
+        }
+
+        .process-step .step-number {
+            counter-increment: step;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0 auto 15px;
+        }
+
+        .process-step h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .process-step p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .cta-section {
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .cta-section h2 {
+            color: white;
+        }
+
+        .cta-section p {
+            margin-bottom: 25px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 12px 35px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: var(--spacing-20px);
+        }
+
+        footer address {
+            font-style: normal;
+            color: #9ca3af;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: var(--spacing-20px);
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .services-hero h1 {
+                font-size: 35px;
+            }
+
+            .services-hero p {
+                font-size: 16px;
+            }
+
+            section h2 {
+                font-size: 26px;
+            }
+
+            .service-card {
+                min-width: 100%;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav aria-label="Main Navigation">
+            <a href="index.html">
+                <img src="./assets/images/manager.png" alt="Ajay Sharma Logo" width="120" />
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Services Hero -->
+    <section class="services-hero" aria-labelledby="services-hero-title">
+        <h1 id="services-hero-title">My Services</h1>
+        <p>End-to-end digital solutions tailored to your business needs — from concept to deployment and beyond.</p>
+    </section>
+
+    <main>
+
+        <!-- Services Grid -->
+        <section aria-labelledby="service-title">
+            <h2 id="service-title">What I Offer</h2>
+            <p class="section-subtitle">Comprehensive development services to bring your ideas to life</p>
+
+            <div class="service-grid">
+
+                <!-- Web Development -->
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">&lt;/&gt;</div>
+                    <h3>Web Development</h3>
+                    <p>Full-stack web applications built with modern technologies — responsive, fast, and scalable.</p>
+                    <ul class="service-features">
+                        <li>Custom MERN Stack Applications</li>
+                        <li>RESTful API Design & Integration</li>
+                        <li>Responsive & Accessible UI</li>
+                        <li>Performance Optimization</li>
+                        <li>SEO-friendly Architecture</li>
+                    </ul>
+                </article>
+
+                <!-- Mobile Development -->
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">&#9881;</div>
+                    <h3>Mobile Development</h3>
+                    <p>Cross-platform mobile applications that deliver native-like performance and user experience.</p>
+                    <ul class="service-features">
+                        <li>React Native Apps</li>
+                        <li>Cross-platform Solutions</li>
+                        <li>Push Notifications</li>
+                        <li>App Store Deployment</li>
+                        <li>API Integration</li>
+                    </ul>
+                </article>
+
+                <!-- Cloud & DevOps -->
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">&#9729;</div>
+                    <h3>Cloud & DevOps</h3>
+                    <p>Reliable cloud infrastructure and streamlined deployment pipelines for your applications.</p>
+                    <ul class="service-features">
+                        <li>AWS (EC2, S3, Lambda, RDS)</li>
+                        <li>CI / CD Pipeline Setup</li>
+                        <li>Docker Containerization</li>
+                        <li>Cloud Architecture Design</li>
+                        <li>Monitoring & Scaling</li>
+                    </ul>
+                </article>
+
+                <!-- Gen AI -->
+                <article class="service-card">
+                    <div class="service-icon" aria-hidden="true">&#9889;</div>
+                    <h3>Gen AI Solutions</h3>
+                    <p>Harness the power of generative AI to automate workflows and create intelligent features.</p>
+                    <ul class="service-features">
+                        <li>LLM Integration (OpenAI, Claude)</li>
+                        <li>AI-powered Chatbots</li>
+                        <li>Content Generation Tools</li>
+                        <li>Data Analysis & Summarization</li>
+                        <li>Custom AI Workflows</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Why Choose Me -->
+        <section aria-labelledby="why-title">
+            <h2 id="why-title">Why Choose Me</h2>
+            <p class="section-subtitle">What sets my work apart</p>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="icon" aria-hidden="true">&#128640;</div>
+                    <h3>Quality First</h3>
+                    <p>Clean, maintainable code with a focus on performance, security, and best practices.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon" aria-hidden="true">&#128200;</div>
+                    <h3>End-to-End Delivery</h3>
+                    <p>From ideation and prototyping to deployment and post-launch support.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon" aria-hidden="true">&#128101;</div>
+                    <h3>Client Collaboration</h3>
+                    <p>Transparent communication, regular updates, and a partnership approach.</p>
+                </div>
+                <div class="why-card">
+                    <div class="icon" aria-hidden="true">&#128260;</div>
+                    <h3>Modern Stack</h3>
+                    <p>Cutting-edge technologies including MERN, AWS, Docker, and AI integration.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section aria-labelledby="process-title">
+            <h2 id="process-title">How I Work</h2>
+            <p class="section-subtitle">A streamlined process from start to finish</p>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>Understand your goals, requirements, and vision for the project.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Design & Plan</h3>
+                    <p>Architect the solution with wireframes, tech stack, and roadmap.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Build & Test</h3>
+                    <p>Develop iteratively with continuous testing and feedback loops.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Deploy & Support</h3>
+                    <p>Launch to production and provide ongoing maintenance and support.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section" aria-labelledby="cta-title">
+            <h2 id="cta-title">Let's Build Something Great</h2>
+            <p>Have a project in mind? Let's discuss how I can help you achieve your goals.</p>
+            <a href="contact.html" class="cta-button">Get in Touch</a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ajay Sharma. All rights reserved</p>
+        <address>Ghaziabad, UP, India</address>
+    </footer>
+
+</body>
+
 </html>
