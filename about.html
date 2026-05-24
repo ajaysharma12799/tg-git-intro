@@ -4,10 +4,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>About | Ajay Sharma - Full Stack Developer</title>
+    <meta name="description" content="Learn more about Ajay Sharma - Full Stack Developer specializing in MERN Stack, AWS, and scalable web applications" />
+    <meta name="keywords" content="full stack developer, about, mern stack, react developer, aws, portfolio, javascript developer" />
+    <meta name="author" content="Ajay Sharma" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <style>
+        .about-hero {
+            text-align: center;
+            padding: 50px var(--spacing-20px);
+            background-color: #111827;
+            color: white;
+            margin: 0;
+            border-radius: 0;
+        }
+        .about-hero h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+        .about-hero p {
+            font-size: 18px;
+            color: #9ca3af;
+        }
+        .bio-section {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .bio-section img {
+            width: 280px;
+            border-radius: 10px;
+        }
+        .bio-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        .bio-text p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        .experience-card {
+            background-color: #f0f4ff;
+            padding: var(--spacing-20px);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-color);
+        }
+        .experience-card h3 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        .experience-card .role {
+            font-weight: 600;
+            color: #333;
+        }
+        .experience-card .date {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
+
+    <!-- Header -->
+    <header>
+        <nav aria-label="Main Navigation">
+            <a href="index.html">
+                <img src="./assets/images/manager.png" alt="Ajay Sharma Logo" width="120" />
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero" aria-labelledby="about-hero-title">
+        <h1 id="about-hero-title">About Me</h1>
+        <p>Passionate about building impactful web solutions</p>
+    </section>
+
+    <main>
+
+        <!-- Bio -->
+        <section aria-labelledby="bio-title">
+            <h2 id="bio-title">Who I Am</h2>
+            <div class="bio-section">
+                <figure>
+                    <img src="./assets/images/manager.png" alt="Portrait of Ajay Sharma" />
+                    <figcaption style="text-align:center;margin-top:10px;color:#6b7280;">
+                        Full Stack Developer based in India
+                    </figcaption>
+                </figure>
+                <div class="bio-text">
+                    <p>
+                        I'm a Full Stack Developer with expertise in the MERN Stack (MongoDB, Express.js, React, Node.js)
+                        and AWS cloud services. I specialize in building scalable, high-performance web applications
+                        tailored to real-world needs.
+                    </p>
+                    <p>
+                        With a strong foundation in both front-end and back-end technologies, I bring ideas to life
+                        through clean code, thoughtful architecture, and a user-first mindset. I'm passionate about
+                        continuous learning, open-source contributions, and solving challenging problems.
+                    </p>
+                    <p>
+                        When I'm not coding, you'll find me exploring new tech trends, writing technical content,
+                        or working on side projects that push the boundaries of what's possible on the web.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section aria-labelledby="skill-title">
+            <h2 id="skill-title">Skills & Technologies</h2>
+            <ul class="skills-list">
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript (ES6+)</li>
+                <li>React.js</li>
+                <li>Node.js & Express</li>
+                <li>MongoDB</li>
+                <li>AWS (EC2, S3, Lambda)</li>
+                <li>TailwindCSS</li>
+                <li>Git & GitHub</li>
+                <li>REST APIs</li>
+                <li>Docker</li>
+                <li>TypeScript</li>
+                <li>CI / CD</li>
+            </ul>
+        </section>
+
+        <!-- Experience -->
+        <section aria-labelledby="experience-title">
+            <h2 id="experience-title">Experience</h2>
+
+            <div class="experience-card">
+                <h3>Full Stack Developer</h3>
+                <p class="role">Freelance / Self-Employed</p>
+                <p class="date">Jan 2024 - Present</p>
+                <p>
+                    Built and deployed multiple client projects using the MERN stack and AWS.
+                    Designed RESTful APIs, implemented authentication, and optimized database queries.
+                </p>
+            </div>
+
+            <div class="experience-card">
+                <h3>React Developer Intern</h3>
+                <p class="role">Tech Startup, India</p>
+                <p class="date">Jun 2023 - Dec 2023</p>
+                <p>
+                    Developed reusable UI components, integrated third-party APIs, and improved
+                    front-end performance. Collaborated in an Agile team environment.
+                </p>
+            </div>
+
+            <div class="experience-card">
+                <h3>Junior Web Developer</h3>
+                <p class="role">Web Agency, India</p>
+                <p class="date">Jan 2023 - May 2023</p>
+                <p>
+                    Assisted in building responsive websites, maintained legacy codebases, and
+                    contributed to internal tooling projects.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Ajay Sharma. All rights reserved</p>
+        <address>Ghaziabad, UP, India</address>
+    </footer>
 
 </body>
 
